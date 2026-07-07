@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#08151f">
+    <meta name="description" content="颱風巴威 2026 年 7 月 7 日中午後公開預測路徑動畫，整合 CWA、JMA、JTWC 資料。">
+    <title>颱風巴威預測路徑動畫</title>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://tile.openstreetmap.org">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="map-stage" aria-label="颱風巴威預測路徑地圖">
+        <div id="map"></div>
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">BAVI 2026</p>
+            <h1>巴威預測路徑動畫</h1>
+          </div>
+          <button class="icon-button" id="locateTaiwan" type="button" title="回到台灣附近" aria-label="回到台灣附近">
+            <i data-lucide="crosshair"></i>
+          </button>
+        </header>
+        <div class="status-card" id="statusCard">
+          <span class="status-dot"></span>
+          <span>讀取路徑中...</span>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="動畫控制面板">
+        <div class="drag-handle" aria-hidden="true"></div>
+        <section class="summary">
+          <p class="eyebrow">資料範圍</p>
+          <h2 id="mainTime">2026/07/07 中午以後</h2>
+          <p id="mainSummary"></p>
+        </section>
+
+        <section class="player">
+          <div class="player-actions">
+            <button class="primary-button" id="playButton" type="button">
+              <i data-lucide="play"></i>
+              <span>播放</span>
+            </button>
+            <button class="icon-button" id="resetButton" type="button" title="重播" aria-label="重播">
+              <i data-lucide="rotate-ccw"></i>
+            </button>
+            <label class="select-label track-select">
+              <span>動畫依據</span>
+              <select id="trackSelect">
+                <option value="cwa" selected>台灣 CWA</option>
+                <option value="jma">日本 JMA</option>
+                <option value="jtwc">美國 JTWC</option>
+              </select>
+            </label>
+            <label class="select-label">
+              <span>速度</span>
+              <select id="speedSelect">
+                <option value="1200">慢</option>
+                <option value="750" selected>標準</option>
+                <option value="420">快</option>
+              </select>
+            </label>
+          </div>
+          <input id="timeSlider" type="range" min="0" max="8" value="0" step="1" aria-label="預測時間軸">
+          <div class="timeline-readout">
+            <span id="frameTime">目前位置</span>
+            <span id="frameLatLng"></span>
+          </div>
+        </section>
+
+        <section class="layers">
+          <div class="section-title">
+            <i data-lucide="map"></i>
+            <span>顯示路徑</span>
+          </div>
+          <label class="toggle-row cwa">
+            <input type="checkbox" data-agency="cwa" checked>
+            <span></span>
+            <strong>台灣 CWA</strong>
+            <small>14:00 起</small>
+          </label>
+          <label class="toggle-row jma">
+            <input type="checkbox" data-agency="jma" checked>
+            <span></span>
+            <strong>日本 JMA</strong>
+            <small>預測點</small>
+          </label>
+          <label class="toggle-row jtwc">
+            <input type="checkbox" data-agency="jtwc" checked>
+            <span></span>
+            <strong>美國 JTWC</strong>
+            <small>預測點</small>
+          </label>
+        </section>
+
+        <section class="details">
+          <div class="section-title">
+            <i data-lucide="info"></i>
+            <span>重點</span>
+          </div>
+          <div class="detail-grid" id="detailGrid"></div>
+          <p class="notice">
+            這是公開資料視覺化，不是官方警報。防颱決策請以中央氣象署最新警特報為準。
+          </p>
+        </section>
+
+        <section class="sources">
+          <div class="section-title">
+            <i data-lucide="link"></i>
+            <span>資料來源</span>
+          </div>
+          <a href="https://www.cwa.gov.tw/V8/C/P/Typhoon/TY_NEWS.html" target="_blank" rel="noreferrer noopener">中央氣象署颱風消息</a>
+          <a href="https://www.jma.go.jp/bosai/typhoon/" target="_blank" rel="noreferrer noopener">日本氣象廳颱風資訊</a>
+          <a href="https://www.metoc.navy.mil/jtwc/jtwc.html" target="_blank" rel="noreferrer noopener">JTWC Tropical Cyclone Warnings</a>
+        </section>
+      </aside>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
