@@ -1,30 +1,30 @@
 # 颱風巴威預測路徑動畫
 
-這是一個可直接上 GitHub Pages 的靜態網頁，用 Leaflet 地圖顯示颱風巴威的公開預測路徑動畫。
+這是一個可部署到 GitHub Pages 的靜態網頁，用 Leaflet 顯示颱風巴威 BAVI 的預測路徑動畫。
 
-## 目前版本
+## 功能
 
-- 只顯示 2026/07/07 中午以後的預測資料。
-- 不顯示中午前資料，也不顯示過去路徑。
-- 可以選擇動畫依據：台灣 CWA、日本 JMA、美國 JTWC。
-- 選哪一個機構，颱風動畫就沿著該機構的預測中心線移動，不取三家平均或中間值。
-- 手機優先版面，底部控制面板適合直式手機觀看。
-- 加入 Windy ECMWF 風場參考連結與可展開嵌入預覽，用來輔助觀察風場結構。
+- 從 2026/07/08 之後的預測點開始顯示，前段歷史路徑不進動畫。
+- 可切換 CWA、JMA、JTWC，動畫會照選定單位的路徑跑，不取中間值。
+- 手機優先版面，控制面板固定在畫面下方。
+- 內嵌 Windy ECMWF surface wind 視覺參考，並可同步到目前動畫點。
+- `data/storm-data.json` 是頁面讀取的資料檔；`scripts/update-data.mjs` 可抓最新公開資料並重寫它。
 
-## 檔案
+## 更新資料
 
-- `index.html`：主頁面
-- `styles.css`：手機與桌面版面
-- `app.js`：CWA、JMA、JTWC 預測座標與動畫邏輯
+本機手動更新：
 
-## 資料來源與時間
+```powershell
+node scripts/update-data.mjs
+```
 
-- 中央氣象署 CWA：2026-07-07 08:00 TST 颱風消息與 KML 路徑，頁面從 14:00 預測點開始呈現。
-- 日本氣象廳 JMA：2026-07-07 12:45 JST 發布之颱風資料，頁面保留預測點。
-- JTWC：Typhoon 09W BAVI Warning NR 025，2026-07-07 0300Z，頁面保留預測點。
-- Windy：ECMWF/GFS/ICON 等數值模式風場視覺化，頁面作為參考連結與嵌入預覽，不參與官方路徑動畫計算。
+GitHub 自動更新：
 
-這個頁面是公開資料視覺化，不是官方警報系統。防颱決策請以中央氣象署最新警特報為準。
+- `.github/workflows/update-data.yml` 每 3 小時會抓一次公開資料。
+- 也可以到 GitHub repository 的 `Actions` 頁面，選 `Update typhoon data`，按 `Run workflow` 手動更新。
+- 網頁上的「更新資料」按鈕會重新讀取已發布的 `data/storm-data.json`。
+
+注意：GitHub Pages 是純靜態網站，朋友手機上的按鈕不能直接替你的 repo 寫入新檔案；真正會改資料檔的是 GitHub Action。
 
 ## 本機預覽
 
@@ -32,13 +32,13 @@
 python -m http.server 8000
 ```
 
-然後打開 `http://localhost:8000`。
+開啟 `http://localhost:8000`。
 
-## GitHub Pages
+## 資料來源
 
-如果 repository 已經上傳到 GitHub：
+- 中央氣象署 CWA 颱風消息與 KML
+- 日本氣象廳 JMA typhoon JSON
+- JTWC Tropical Cyclone Warnings
+- Windy ECMWF 視覺圖層作為風場參考
 
-1. 到 repository 的 `Settings` -> `Pages`。
-2. `Source` 選 `Deploy from a branch`。
-3. branch 選 `main`，資料夾選 `/root`。
-4. 儲存後等 1-2 分鐘，就會得到分享網址。
+本頁僅為公開資料視覺化，不是官方警報。防災決策請以中央氣象署與地方政府正式公告為準。
