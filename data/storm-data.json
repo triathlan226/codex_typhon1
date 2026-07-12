@@ -1,7 +1,7 @@
 {
   "name": "颱風巴威 BAVI",
-  "issueLabel": "更新：2026-07-12 08:00 TST",
-  "startLabel": "07/12 14:00 起",
+  "issueLabel": "更新：2026-07-12 14:00 TST",
+  "startLabel": "07/12 20:00 起",
   "summary": "資料由 GitHub Action 抓取 CWA、JMA、JTWC 公開來源後整理。動畫可選各單位個別路徑，不使用中間值；Windy 區塊同步到目前動畫點，作為 ECMWF 風場視覺參考。",
   "agencies": {
     "cwa": {
@@ -9,22 +9,13 @@
       "shortLabel": "CWA",
       "color": "#ec5d3f",
       "source": "中央氣象署颱風消息 / KML",
-      "note": "2026-07-12 08:00 TST 分析，07/12 14:00 起預測",
+      "note": "2026-07-12 14:00 TST 分析，07/12 20:00 起預測",
       "points": [
-        {
-          "time": "2026-07-12T06:00:00.000Z",
-          "label": "07/12 14:00",
-          "lat": 30.6,
-          "lon": 118.8,
-          "windMs": 28,
-          "pressure": 980,
-          "radiusKm": 220
-        },
         {
           "time": "2026-07-12T12:00:00.000Z",
           "label": "07/12 20:00",
-          "lat": 31.5,
-          "lon": 118,
+          "lat": 31.8,
+          "lon": 117.9,
           "windMs": 28,
           "pressure": 980,
           "radiusKm": 220
@@ -32,8 +23,8 @@
         {
           "time": "2026-07-12T18:00:00.000Z",
           "label": "07/13 02:00",
-          "lat": 32.2,
-          "lon": 117.7,
+          "lat": 32.4,
+          "lon": 117.6,
           "windMs": 28,
           "pressure": 980,
           "radiusKm": 220
@@ -41,38 +32,38 @@
         {
           "time": "2026-07-13T00:00:00.000Z",
           "label": "07/13 08:00",
-          "lat": 32.9,
-          "lon": 117.8,
+          "lat": 33.1,
+          "lon": 117.5,
           "windMs": 28,
           "pressure": 980,
           "radiusKm": 220
         },
         {
-          "time": "2026-07-13T12:00:00.000Z",
-          "label": "07/13 20:00",
-          "lat": 34.3,
+          "time": "2026-07-13T06:00:00.000Z",
+          "label": "07/13 14:00",
+          "lat": 33.6,
+          "lon": 117.7,
+          "windMs": 23,
+          "pressure": 985,
+          "radiusKm": 150
+        },
+        {
+          "time": "2026-07-13T18:00:00.000Z",
+          "label": "07/14 02:00",
+          "lat": 35.1,
           "lon": 118.7,
-          "windMs": 28,
-          "pressure": 980,
-          "radiusKm": 220
+          "windMs": 23,
+          "pressure": 985,
+          "radiusKm": 150
         },
         {
-          "time": "2026-07-14T00:00:00.000Z",
-          "label": "07/14 08:00",
-          "lat": 36.2,
-          "lon": 120.9,
-          "windMs": 28,
-          "pressure": 980,
-          "radiusKm": 220
-        },
-        {
-          "time": "2026-07-15T00:00:00.000Z",
-          "label": "07/15 08:00",
-          "lat": 40,
-          "lon": 130.2,
-          "windMs": 28,
-          "pressure": 980,
-          "radiusKm": 220
+          "time": "2026-07-14T06:00:00.000Z",
+          "label": "07/14 14:00",
+          "lat": 37.2,
+          "lon": 121.6,
+          "windMs": 23,
+          "pressure": 985,
+          "radiusKm": 150
         }
       ]
     },
@@ -81,35 +72,28 @@
       "shortLabel": "JMA",
       "color": "#168f7f",
       "source": "日本氣象廳 typhoon JSON",
-      "note": "2026-07-12 12:45:00+09:00 發布",
+      "note": "2026-07-12 15:45:00+09:00 發布",
       "points": [
         {
-          "time": "2026-07-12T15:00:00.000Z",
-          "label": "07/13 00:00 JST",
-          "lat": 32.1,
-          "lon": 117.9,
+          "time": "2026-07-12T18:00:00.000Z",
+          "label": "07/13 03:00 JST",
+          "lat": 32.5,
+          "lon": 117.6,
           "probabilityKm": 46.3
         },
         {
-          "time": "2026-07-13T03:00:00.000Z",
-          "label": "07/13 12:00 JST",
-          "lat": 33.5,
+          "time": "2026-07-13T06:00:00.000Z",
+          "label": "07/13 15:00 JST",
+          "lat": 33.9,
           "lon": 117.9,
           "probabilityKm": 64.8
         },
         {
-          "time": "2026-07-14T00:00:00.000Z",
-          "label": "07/14 09:00 JST",
-          "lat": 36.2,
-          "lon": 120.4,
-          "probabilityKm": 129.6
-        },
-        {
-          "time": "2026-07-15T00:00:00.000Z",
-          "label": "07/15 09:00 JST",
-          "lat": 40.8,
-          "lon": 131,
-          "probabilityKm": 222.2
+          "time": "2026-07-14T06:00:00.000Z",
+          "label": "07/14 15:00 JST",
+          "lat": 37.9,
+          "lon": 121.6,
+          "probabilityKm": 157.4
         }
       ]
     },
