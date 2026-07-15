@@ -1,8 +1,8 @@
 {
   "name": "颱風巴威 BAVI",
-  "issueLabel": "更新：2026-07-12 20:00 TST",
-  "startLabel": "07/13 02:00 起",
-  "summary": "資料由 GitHub Action 抓取 CWA、JMA、JTWC 公開來源後整理。動畫可選各單位個別路徑，不使用中間值；Windy 區塊同步到目前動畫點，作為 ECMWF 風場視覺參考。",
+  "issueLabel": "封存：2026-07-12 20:00 TST",
+  "startLabel": "07/13 02:00 起封存",
+  "summary": "颱風巴威已過境，本資料檔保留最後整理的公開預測路徑作為封存紀錄。動畫可選各單位個別路徑，不使用中間值；Windy 區塊同步到目前動畫點，作為 ECMWF 風場視覺參考。",
   "agencies": {
     "cwa": {
       "label": "台灣 CWA",

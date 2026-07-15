@@ -1,26 +1,23 @@
 const fallbackStormData = {
   name: "颱風巴威 BAVI",
-  issueLabel: "更新：2026/07/08 02:00 TST",
-  startLabel: "2026/07/08 02:00 TST 起",
+  issueLabel: "封存：2026/07/12 20:00 TST",
+  startLabel: "07/13 02:00 起封存",
   summary:
-    "目前資料已更新到 7/8 最新公開預測。動畫可選 CWA、JMA 或 JTWC 的個別路徑，不使用中間值；Windy 區塊則同步到目前動畫點，作為 ECMWF 風場視覺參考。",
+    "颱風巴威已過境，本頁保留最後整理的公開預測路徑作為封存動畫。動畫可選 CWA、JMA 或 JTWC 的個別路徑，不使用中間值；Windy 區塊仍可同步到目前動畫點作為風場畫面參考。",
   agencies: {
     cwa: {
       label: "台灣 CWA",
       shortLabel: "CWA",
       color: "#ec5d3f",
       source: "中央氣象署颱風消息 / KML",
-      note: "2026/07/08 02:00 TST 分析，08:00 起預測",
+      note: "2026/07/12 20:00 TST 分析，07/13 02:00 起預測",
       points: [
-        { time: "2026-07-08T00:00:00Z", label: "07/08 08:00", lat: 16.8, lon: 133.9, windMs: 60, pressure: 895, radiusKm: 350, probabilityKm: 40 },
-        { time: "2026-07-08T06:00:00Z", label: "07/08 14:00", lat: 17.1, lon: 132.8, windMs: 60, pressure: 895, radiusKm: 350, probabilityKm: 50 },
-        { time: "2026-07-08T12:00:00Z", label: "07/08 20:00", lat: 17.3, lon: 131.8, windMs: 60, pressure: 895, radiusKm: 350, probabilityKm: 80 },
-        { time: "2026-07-08T18:00:00Z", label: "07/09 02:00", lat: 17.7, lon: 130.8, windMs: 60, pressure: 895, radiusKm: 350, probabilityKm: 90 },
-        { time: "2026-07-09T06:00:00Z", label: "07/09 14:00", lat: 18.9, lon: 129.2, windMs: 60, pressure: 895, radiusKm: 350, probabilityKm: 100 },
-        { time: "2026-07-09T18:00:00Z", label: "07/10 02:00", lat: 20.4, lon: 127.5, windMs: 58, pressure: 900, radiusKm: 350, probabilityKm: 150 },
-        { time: "2026-07-10T18:00:00Z", label: "07/11 02:00", lat: 24.1, lon: 123.9, windMs: 51, pressure: 925, radiusKm: 350, probabilityKm: 230 },
-        { time: "2026-07-11T18:00:00Z", label: "07/12 02:00", lat: 28.3, lon: 119.4, windMs: 35, pressure: 965, radiusKm: 250, probabilityKm: 360 },
-        { time: "2026-07-12T18:00:00Z", label: "07/13 02:00", lat: 31.9, lon: 116.4, windMs: 18, pressure: 998, radiusKm: 100, probabilityKm: 460 }
+        { time: "2026-07-12T18:00:00.000Z", label: "07/13 02:00", lat: 32.7, lon: 117.6, windMs: 28, pressure: 980, radiusKm: 220 },
+        { time: "2026-07-13T00:00:00.000Z", label: "07/13 08:00", lat: 33.4, lon: 117.6, windMs: 28, pressure: 980, radiusKm: 220 },
+        { time: "2026-07-13T06:00:00.000Z", label: "07/13 14:00", lat: 33.9, lon: 117.8, windMs: 23, pressure: 985, radiusKm: 150 },
+        { time: "2026-07-13T12:00:00.000Z", label: "07/13 20:00", lat: 34.6, lon: 118.3, windMs: 23, pressure: 985, radiusKm: 150 },
+        { time: "2026-07-14T00:00:00.000Z", label: "07/14 08:00", lat: 36.5, lon: 120.4, windMs: 23, pressure: 985, radiusKm: 150 },
+        { time: "2026-07-14T12:00:00.000Z", label: "07/14 20:00", lat: 38.6, lon: 124.2, windMs: 23, pressure: 985, radiusKm: 150 }
       ]
     },
     jma: {
@@ -28,31 +25,25 @@ const fallbackStormData = {
       shortLabel: "JMA",
       color: "#168f7f",
       source: "日本氣象廳 typhoon JSON",
-      note: "2026/07/08 06:45 JST 發布",
+      note: "2026/07/13 03:50 JST 發布",
       points: [
-        { time: "2026-07-08T09:00:00Z", label: "07/08 18:00 JST", lat: 17.1, lon: 132.4, probabilityKm: 46.3 },
-        { time: "2026-07-08T21:00:00Z", label: "07/09 06:00 JST", lat: 17.8, lon: 130.6, probabilityKm: 64.8 },
-        { time: "2026-07-09T18:00:00Z", label: "07/10 03:00 JST", lat: 20.3, lon: 127.8, probabilityKm: 101.9 },
-        { time: "2026-07-10T18:00:00Z", label: "07/11 03:00 JST", lat: 24.1, lon: 124.3, probabilityKm: 148.2 },
-        { time: "2026-07-11T18:00:00Z", label: "07/12 03:00 JST", lat: 28.0, lon: 119.2, probabilityKm: 185.2 },
-        { time: "2026-07-12T18:00:00Z", label: "07/13 03:00 JST", lat: 31.8, lon: 115.6, probabilityKm: 222.2 }
+        { time: "2026-07-13T06:00:00.000Z", label: "07/13 15:00 JST", lat: 33.9, lon: 118.0, probabilityKm: 46.3 },
+        { time: "2026-07-13T18:00:00.000Z", label: "07/14 03:00 JST", lat: 35.4, lon: 119.5, probabilityKm: 77.8 },
+        { time: "2026-07-14T18:00:00.000Z", label: "07/15 03:00 JST", lat: 39.4, lon: 128.5, probabilityKm: 185.2 },
+        { time: "2026-07-15T18:00:00.000Z", label: "07/16 03:00 JST", lat: 45.4, lon: 139.8, probabilityKm: 296.3 }
       ]
     },
     jtwc: {
       label: "美軍 JTWC",
       shortLabel: "JTWC",
       color: "#2f70d7",
-      source: "JTWC Warning 028",
-      note: "WTPN31 PGTW 072100",
+      source: "JTWC Warning 044",
+      note: "WTPN31 PGTW 112100",
       points: [
-        { time: "2026-07-08T06:00:00Z", label: "080600Z", lat: 17.1, lon: 132.9, windKt: 130 },
-        { time: "2026-07-08T18:00:00Z", label: "081800Z", lat: 17.7, lon: 130.9, windKt: 125 },
-        { time: "2026-07-09T06:00:00Z", label: "090600Z", lat: 18.8, lon: 129.1, windKt: 120 },
-        { time: "2026-07-09T18:00:00Z", label: "091800Z", lat: 20.1, lon: 127.5, windKt: 115 },
-        { time: "2026-07-10T06:00:00Z", label: "100600Z", lat: 21.9, lon: 125.8, windKt: 110 },
-        { time: "2026-07-10T18:00:00Z", label: "101800Z", lat: 23.8, lon: 123.9, windKt: 105 },
-        { time: "2026-07-11T18:00:00Z", label: "111800Z", lat: 27.8, lon: 119.8, windKt: 60 },
-        { time: "2026-07-12T18:00:00Z", label: "121800Z", lat: 31.7, lon: 116.7, windKt: 25 }
+        { time: "2026-07-12T06:00:00.000Z", label: "120600Z", lat: 30.7, lon: 118.5, windKt: 40 },
+        { time: "2026-07-12T18:00:00.000Z", label: "121800Z", lat: 32.3, lon: 117.7, windKt: 30 },
+        { time: "2026-07-13T06:00:00.000Z", label: "130600Z", lat: 33.6, lon: 117.9, windKt: 25 },
+        { time: "2026-07-13T18:00:00.000Z", label: "131800Z", lat: 35.1, lon: 119.1, windKt: 20 }
       ]
     }
   }
@@ -89,11 +80,9 @@ const speedSelect = document.getElementById("speedSelect");
 const trackSelect = document.getElementById("trackSelect");
 const playButton = document.getElementById("playButton");
 const resetButton = document.getElementById("resetButton");
-const refreshButton = document.getElementById("refreshButton");
 const frameTime = document.getElementById("frameTime");
 const frameLatLng = document.getElementById("frameLatLng");
 const statusCard = document.getElementById("statusCard");
-const refreshStatus = document.getElementById("refreshStatus");
 const windyFrame = document.getElementById("windyFrame");
 const windyOpenLink = document.getElementById("windyOpenLink");
 const windyPoint = document.getElementById("windyPoint");
@@ -124,10 +113,6 @@ function formatPoint(point) {
 
 function setStatus(text) {
   statusCard.querySelector("span:last-child").textContent = text;
-}
-
-function setRefreshStatus(text) {
-  refreshStatus.textContent = text;
 }
 
 function createLabel(point, color) {
@@ -346,7 +331,7 @@ function buildDetails() {
     [formatPoint(cwaNearTaiwan), "CWA 接近台灣附近位置"],
     [formatPoint(jmaLast), "JMA 最後預測點"],
     [formatPoint(jtwcLast), "JTWC 最後預測點"],
-    [stormData.agencies.jtwc.source, "JTWC 來源版本"]
+    [stormData.agencies.jtwc.source, "封存來源版本"]
   ];
 
   document.getElementById("detailGrid").innerHTML = items
@@ -359,7 +344,7 @@ function updateHeader() {
   document.getElementById("mainSummary").textContent = stormData.summary;
 }
 
-function applyStormData(nextData, message) {
+function applyStormData(nextData) {
   stormData = nextData;
   if (!stormData.agencies[activeAgencyKey]) {
     activeAgencyKey = "cwa";
@@ -372,14 +357,6 @@ function applyStormData(nextData, message) {
   buildDetails();
   updateFrame(0);
   fitInitialMap();
-  setRefreshStatus(message || `目前使用 ${stormData.issueLabel}`);
-}
-
-async function loadPublishedData(showSuccess = false) {
-  const response = await fetch(`./data/storm-data.json?v=${Date.now()}`, { cache: "no-store" });
-  if (!response.ok) throw new Error(`資料檔讀取失敗：HTTP ${response.status}`);
-  const data = await response.json();
-  applyStormData(data, showSuccess ? `已重新載入資料檔：${data.issueLabel}` : `已載入資料檔：${data.issueLabel}`);
 }
 
 function fitInitialMap() {
@@ -405,16 +382,6 @@ function bindControls() {
   resetButton.addEventListener("click", () => {
     stopPlayer();
     updateFrame(0);
-  });
-
-  refreshButton.addEventListener("click", async () => {
-    stopPlayer();
-    setRefreshStatus("正在重新讀取最新資料檔...");
-    try {
-      await loadPublishedData(true);
-    } catch (error) {
-      setRefreshStatus(`無法直接更新：${error.message}。若是 file:// 預覽，請用本機伺服器或 GitHub Pages 開啟。`);
-    }
   });
 
   speedSelect.addEventListener("change", () => {
@@ -455,15 +422,9 @@ function bindControls() {
   });
 }
 
-async function init() {
+function init() {
   bindControls();
-  applyStormData(fallbackStormData, "已載入內建備援資料，正在嘗試讀取資料檔...");
-
-  try {
-    await loadPublishedData(false);
-  } catch {
-    setRefreshStatus("目前使用內建備援資料。若要讓更新按鈕可用，請用 http://localhost 或 GitHub Pages 開啟。");
-  }
+  applyStormData(fallbackStormData);
 
   const firstPoint = pointForIndex(currentAgency().points, activeIndex);
   updateWindyReference(firstPoint, currentAgency(), true);
